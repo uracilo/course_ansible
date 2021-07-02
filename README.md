@@ -1,24 +1,29 @@
 # course_ansible
 
-
-
+Change ubuntu user password
+```
 sudo su 
 passwd ubuntu
+```
+Copy pub
 
-
-ssh-copy-id -i ~/.ssh/id_rsa.pub ubuntu@ec2-54-242-255-62.compute-1.amazonaws.com
-
-
-
+```
+ssh-copy-id -i ~/.ssh/id_rsa.pub ubuntu@ip
+```
+Add to list of hosts
+```
 sudo vi /etc/ansible/hosts
+```
+Add with a label
+```
 [test]
-ec2-54-242-255-62.compute-1.amazonaws.com ansible_ssh_user=ubuntu
+ip ansible_ssh_user=ubuntu
+```
 
-
-
-
+Test
+```
 ansible test -m ping
 ansible test -m shell -a "echo 'hola mundo'"
-
+```
 
 
