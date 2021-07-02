@@ -50,17 +50,19 @@ ansible test:development -m shell -a "echo 'hola mundo'"
 playbook.yml
 ```
 ---
--host: all
- remote_user: ubuntu
+---
+# This playbook is use to test servers
+- name: Test
+  hosts: all
+  remote_user: ubuntu
 
- task:
- - name: "Test ping"
-   ping:
- - name: "Echo hola mundo"
-   sheel: /usr/bin/echo "hola Mundo desde ansible"
-   register: hello
- - name: "salida echo"
-   debug: msg="{{ hello.stdout }}"
+  tasks:
+  - name: Ping
+    ping:
+    
+  - name: Print debug message
+    debug:
+      msg: Hello, world!
 ```
 
 
