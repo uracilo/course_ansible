@@ -1,6 +1,7 @@
 # course_ansible
 
 ## Create a AMI
+ansible-doc -l 
 
 Change ubuntu user password
 ```
